@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Upgrade Announcement: Financial Compliance Module</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <!-- Control Header -->
+        <header class="header">
+            <span class="badge">SYSTEM UPDATE // NO. 2026-09-13</span>
+            <div class="controls">
+                <button id="langToggle" class="btn btn-secondary">Switch to ភាសាខ្មែរ</button>
+                <button id="ttsPlay" class="btn btn-primary">🔊 Read Announcement</button>
+                <button id="ttsStop" class="btn btn-danger" hidden>⏹ Stop</button>
+            </div>
+        </header>
+
+        <!-- English Announcement Content -->
+        <article id="content-en" class="announcement-card">
+            <h1>Successful Deployment: Advanced Financial Compliance Engine (AUDIT_REGISTRY v2.4)</h1>
+            <p class="meta"><strong>Date:</strong> September 13, 2026 | <strong>Scope:</strong> Core Interbank Clearing, Bakong Sweep & ISO Gateway Systems</p>
+            <hr>
+
+            <p class="lead">We are pleased to announce the successful deployment and integration of our upgraded Financial Compliance & Risk Monitoring Module across the network registry.</p>
+
+            <h2>1. System Overview & Technical Objectives</h2>
+            <p>The core objective of this infrastructure upgrade is to enhance real-time anti-money laundering (AML), Know Your Customer (KYC) verification routing, and high-velocity fraud detection mechanisms. The newly compiled <code>AUDIT_REGISTRY</code> engine now maintains zero-latency continuous tracking across interbank transfers, National Clearing House settlement nodes, and Bakong API integration endpoints.</p>
+
+            <h2>2. Key Capabilities Introduced</h2>
+            <ul>
+                <li><strong>Automated Velocity Threshold Scanning:</strong> Real-time flagging of single or accumulated transfer volumes exceeding configured limits (e.g., $50,000 threshold breach verification).</li>
+                <li><strong>Micro-Transaction & Layering Evaluation:</strong> Automated structural layering detection capable of isolating high-frequency $1.00 routing anomalies across pending nodes.</li>
+                <li><strong>Dynamic Registry Mapping:</strong> Unified ledger mapping linking transaction IDs (<code>TXN-KN-90218</code> through <code>TXN-KN-90250</code>) directly with real-time risk profiles.</li>
+                <li><strong>Sanctions & PEP Cross-Referencing:</strong> Integrated automated scans against OFAC SDN lists and Politically Exposed Person (PEP) registers without introducing settlement latency.</li>
+            </ul>
+
+            <h2>3. Operational Impact & System Status</h2>
+            <p>All core clearing services, including FAST Clearing Nodes and Interbank ISO Gateways, remain fully operational. All flagged records (such as high-volume outflow monitors and corporate verification reviews) are now automatically routed to compliance officers for immediate resolution.</p>
+            
+            <blockquote>
+                <strong>Notice to System Administrators:</strong> Legacy audit endpoints have been deprecated. All API calls querying compliance records must route through the updated <code>AUDIT_REGISTRY</code> data schema effective immediately.
+            </blockquote>
+        </article>
+
+        <!-- Khmer Announcement Content -->
+        <article id="content-km" class="announcement-card" hidden>
+            <h1>ការប្រកាសជោគជ័យ៖ ការធ្វើបច្ចុប្បន្នភាពប្រព័ន្ធអនុលោមភាពហិរញ្ញវត្ថុ (AUDIT_REGISTRY v2.4)</h1>
+            <p class="meta"><strong>កាលបរិច្ឆេទ៖</strong> ថ្ងៃទី ១៣ ខែកញ្ញា ឆ្នាំ ២០២៦ | <strong>វិសាលភាព៖</strong> ប្រព័ន្ធទូទាត់អន្តរធនាគារ, Bakong Sweep និង ISO Gateway</p>
+            <hr>
+
+            <p class="lead">យើងខ្ញុំសូមជម្រាបជូនដំណឹងដោយក្តីរីករាយអំពីការដាក់ឱ្យប្រើប្រាស់ដោយជោគជ័យនូវប្រព័ន្ធអនុលោមភាពហិរញ្ញវត្ថុ និងប្រព័ន្ធតាមដានហានិភ័យជំនាន់ថ្មី នៅក្នុងបណ្តាញប្រតិបត្តិការទាំងមូល។</p>
+
+            <h2>១. សេចក្តីសង្ខេប និងគោលបំណងបច្ចេកវិទ្យា</h2>
+            <p>គោលបំណងចម្បងនៃការធ្វើបច្ចុប្បន្នភាពហេដ្ឋារចនាសម្ព័ន្ធនេះ គឺដើម្បីពង្រឹងសមត្ថភាពតាមដានការលាងលុយ (AML) ការផ្ទៀងផ្ទាត់អត្តសញ្ញាណអតិថិជន (KYC) និងការទប់ស្កាត់ការឆបោកក្នុងប្រព័ន្ធហិរញ្ញវត្ថុភ្លាមៗ (Real-time)។ ប្រព័ន្ធ <code>AUDIT_REGISTRY</code> ថ្មីនេះ អាចធ្វើការត្រួតពិនិត្យរាល់ប្រតិបត្តិការផ្ទេរប្រាក់ឆ្លងធនាគារ ប្រព័ន្ធទូទាត់ជាតិ និងច្រកទ្វារ Bakong API ដោយគ្មានភាពយឺតយ៉ាវឡើយ។</p>
+
+            <h2>២. សមត្ថភាពសំខាន់ៗដែលត្រូវបានអភិវឌ្ឍ</h2>
+            <ul>
+                <li><strong>ការត្រួតពិនិត្យប្រាក់ផ្ទេរទំហំធំស្វ័យប្រវត្តិ៖</strong> ផ្ដល់សញ្ញាអាសន្នភ្លាមៗនៅពេលមានប្រតិបត្តិការលើសពីកម្រិតកំណត់ (ឧទាហរណ៍៖ ប្រតិបត្តិការលើសពី $50,000)។</li>
+                <li><strong>ការវិភាគប្រតិបត្តិការតូចៗជាច្រើនដង៖</strong> ប្រព័ន្ធអាចរកឃើញភាពមិនប្រក្រតីនៃការផ្ទេរប្រាក់ចំនួន $1.00 ដែលមានគំរូសង្ស័យតាមបណ្តាញ Pending ផ្សេងៗ។</li>
+                <li><strong>ការភ្ជាប់ទិន្នន័យបញ្ជីឈ្មោះសកម្ម៖</strong> បញ្ចូលលេខកូដប្រតិបត្តិការ (<code>TXN-KN-90218</code> ដល់ <code>TXN-KN-90250</code>) ទៅក្នុងទិន្នន័យវាយតម្លៃហានិភ័យដោយផ្ទាល់។</li>
+                <li><strong>ការស្កេនបញ្ជីខ្មៅ និងបុគ្គល PEP៖</strong> ស្កេនប្រៀបធៀបឈ្មោះជាមួយបញ្ជីទណ្ឌកម្ម OFAC SDN និងបុគ្គលមានឥទ្ធិពលនយោបាយដោយស្វ័យប្រវត្តិ។</li>
+            </ul>
+
+            <h2>៣. ផលប៉ះពាល់ប្រតិបត្តិការ និងស្ថានភាពប្រព័ន្ធ</h2>
+            <p>រាល់សេវាទូទាត់ប្រាក់ទាំងអស់ រួមទាំង FAST Clearing Nodes និង Interbank ISO Gateways នៅតែដំណើរការជាធម្មតា។ រាល់ប្រតិបត្តិការដែលត្រូវបាន Flagged នឹងត្រូវបញ្ជូនទៅកាន់មន្ត្រីអនុលោមភាពដើមីប្រពិនិត្យ និងដោះស្រាយជាបន្ត។</p>
+            
+            <blockquote>
+                <strong>សេចក្តីជូនដំណឹងដល់អ្នកគ្រប់គ្រងប្រព័ន្ធ៖</strong> ច្រក API អូឌីតចាស់ត្រូវបានបិទប្រតិបត្តិការ។ រាល់ការទាញយកទិន្នន័យអនុលោមភាពត្រូវប្រើប្រាស់ទម្រង់ទិន្នន័យ <code>AUDIT_REGISTRY</code> ថ្មីចាប់ពីពេលនេះតទៅ។
+            </blockquote>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
