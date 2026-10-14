@@ -180,3 +180,242 @@ blockquote {
         text-align: center;
     }
 }
+
+/* Full-Background Theme & Global Reset */
+:root {
+    --bg-dark: #070b19;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --primary-blue: #2563eb;
+    --text-main: #1e293b;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: #f1f5f9;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Cinematic Full-Background Hero Banner */
+.hero-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Pushes the hero image completely behind content as a living background */
+    overflow: hidden;
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Immersive Background Image Scaling */
+.img-full-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fully covers viewport without stretching */
+    object-position: center;
+    display: block;
+    filter: brightness(0.45) contrast(1.1); /* Darkens and dims image so foreground text pops */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+/* Subtle breathing animation on desktop hover */
+.hero-fullscreen:hover .img-full-cover {
+    transform: scale(1.03);
+    filter: brightness(0.55) contrast(1.15);
+}
+
+/* Fullscreen Exploded View State (Triggered via click/JS) */
+.hero-fullscreen.expanded {
+    z-index: 999; /* Brings image to the absolute front */
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.hero-fullscreen.expanded .img-full-cover {
+    object-fit: contain; /* Displays full uncropped image */
+    filter: brightness(1) contrast(1);
+    transform: scale(1);
+}
+
+/* Atmospheric Gradient Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(11, 19, 43, 0.3) 0%, rgba(7, 11, 25, 0.85) 100%);
+    pointer-events: none;
+}
+
+/* Main Foreground Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Keeps content layered safely above the background */
+}
+
+/* Header & Control Bar Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+    background-color: rgba(37, 99, 235, 0.25);
+    color: #93c5fd;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid rgba(147, 197, 253, 0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Modern Glassmorphism Buttons */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary { 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #f1f5f9; 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.btn-secondary:hover { background-color: rgba(255, 255, 255, 0.2); }
+
+.btn-primary { 
+    background-color: #2563eb; 
+    color: #fff; 
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+.btn-primary:hover { background-color: #1d4ed8; }
+
+.btn-danger { 
+    background-color: #dc2626; 
+    color: #fff; 
+}
+.btn-danger:hover { background-color: #b91c1c; }
+
+/* Frosted Glass Announcement Cards */
+.announcement-card {
+    background: var(--card-bg);
+    color: var(--text-main);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.announcement-card h1 {
+    font-size: 1.85rem;
+    color: #0f172a;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+}
+
+.announcement-card h2 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-top: 28px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 6px;
+}
+
+.meta {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.lead {
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+code {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary-blue);
+    margin: 25px 0;
+    padding: 14px 18px;
+    background-color: #f8fafc;
+    color: #334155;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Mobile Optimizations for Android Browsers */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px auto;
+        padding: 12px;
+    }
+    
+    .announcement-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .announcement-card h1 {
+        font-size: 1.4rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+    }
+
+    .controls {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .controls .btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
